@@ -10,7 +10,7 @@ Application simple de gestion d'une bibliotheque avec :
 
 Le projet couvre les besoins du cahier des charges : auteurs, adherents, livres, emprunts, retours, retards, recherche, pagination, historique et statistiques.
 
-Application en ligne : https://NOM-DU-SERVICE.onrender.com
+Application en ligne : https://lkotanga.onrender.com
 
 ## 1. Structure
 
@@ -365,7 +365,7 @@ Le projet est deploye avec deux services gratuits :
 - **Neon** : la base de donnees PostgreSQL ;
 - **Render** : l'application Node.js. Le meme service Express sert le frontend (dossier `frontend/`) et l'API (`/api/...`).
 
-Adresse du projet en ligne : `https://NOM-DU-SERVICE.onrender.com`
+Adresse du projet en ligne : `https://lkotanga.onrender.com`
 
 ```text
 Navigateur  ->  Render (Express : pages HTML + API /api/...)  ->  Neon (PostgreSQL)
@@ -393,7 +393,7 @@ En ligne, elle lit une seule variable, `DATABASE_URL`, qui contient l'adresse de
    - Start Command : `npm start`
    - Instance : Free
    - Variable d'environnement : `DATABASE_URL`
-4. **Verification** : ouvrir `https://NOM-DU-SERVICE.onrender.com/api/health` (reponse attendue : `"status":"ok"`), puis la page d'accueil.
+4. **Verification** : ouvrir `https://lkotanga.onrender.com/api/health` (reponse attendue : `"status":"ok"`), puis la page d'accueil.
 
 ### Mise a jour
 
@@ -406,5 +406,5 @@ Chaque `git push` sur la branche `main` redeploie automatiquement l'application 
 
 ### Tester la version en ligne
 
-- Postman : remplacer la variable `baseUrl` de la collection par `https://NOM-DU-SERVICE.onrender.com/api`.
+- Postman : remplacer la variable `baseUrl` de la collection par `https://lkotanga.onrender.com/api`.
 - Navigateur : parcourir les pages Tableau de bord, Livres, Auteurs, Adherents et Emprunts.

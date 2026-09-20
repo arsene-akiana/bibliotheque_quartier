@@ -1,6 +1,6 @@
 # Demonstration du projet
 
-Ordre simple pour presenter le projet au formateur.
+Ordre simple pour presenter le projet.
 
 ## 1. Base de donnees
 
@@ -91,11 +91,11 @@ Le `seed.sql` ajoute un emprunt arrive a echeance pour faciliter la demonstratio
 
 Ouvrir l'adresse du projet en ligne (patienter jusqu'a une minute si le service etait en veille) :
 
-`https://NOM-DU-SERVICE.onrender.com`
+`https://lkotanga.onrender.com`
 
 Verifier :
 
-1. `https://NOM-DU-SERVICE.onrender.com/api/health` repond `"status":"ok"`.
+1. `https://lkotanga.onrender.com/api/health` repond `"status":"ok"`.
 2. Le tableau de bord affiche les statistiques.
 3. Un emprunt peut etre cree puis rendu depuis la page Emprunts.
 
