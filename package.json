@@ -1,0 +1,19 @@
+{
+  "name": "bibliotheque-quartier",
+  "version": "1.0.0",
+  "description": "Application de gestion d'une bibliotheque de quartier",
+  "main": "backend/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}

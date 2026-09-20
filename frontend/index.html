@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotheque - Tableau de bord</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body data-page="dashboard">
+<header>
+    <h1>Bibliotheque de quartier</h1>
+    <nav>
+        <a data-page="dashboard" href="./index.html">Tableau de bord</a>
+        <a data-page="books" href="./books.html">Livres</a>
+        <a data-page="authors" href="./authors.html">Auteurs</a>
+        <a data-page="members" href="./members.html">Adherents</a>
+        <a data-page="loans" href="./loans.html">Emprunts</a>
+    </nav>
+</header>
+<main>
+    <h2>Tableau de bord</h2>
+    <div id="message" class="message hidden"></div>
+    <div class="grid">
+        <div class="card"><div>Total livres</div><div id="totalBooks" class="stat-value">-</div></div>
+        <div class="card"><div>Total adherents</div><div id="totalMembers" class="stat-value">-</div></div>
+        <div class="card"><div>Emprunts en cours</div><div id="activeLoans" class="stat-value">-</div></div>
+        <div class="card"><div>Emprunts en retard</div><div id="overdueLoans" class="stat-value">-</div></div>
+    </div>
+    <div class="grid" style="margin-top: 16px;">
+        <div class="card"><h3>Livre le plus emprunte</h3><p id="mostBorrowedBook">-</p></div>
+        <div class="card"><h3>Adherent le plus actif</h3><p id="mostActiveMember">-</p></div>
+    </div>
+</main>
+<script src="./js/api.js"></script>
+<script src="./js/layout.js"></script>
+<script src="./js/dashboard.js"></script>
+</body>
+</html>

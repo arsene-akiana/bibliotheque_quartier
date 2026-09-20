@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotheque - Livres</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body data-page="books">
+<header>
+    <h1>Bibliotheque de quartier</h1>
+    <nav>
+        <a data-page="dashboard" href="./index.html">Tableau de bord</a>
+        <a data-page="books" href="./books.html">Livres</a>
+        <a data-page="authors" href="./authors.html">Auteurs</a>
+        <a data-page="members" href="./members.html">Adherents</a>
+        <a data-page="loans" href="./loans.html">Emprunts</a>
+    </nav>
+</header>
+<main>
+    <h2>Gestion des livres</h2>
+    <div id="message" class="message hidden"></div>
+
+    <div class="form-card">
+        <form id="bookForm">
+            <input id="bookId" type="hidden">
+            <div class="form-grid">
+                <div><label for="title">Titre</label><input id="title" required maxlength="200"></div>
+                <div><label for="authorId">Auteur</label><select id="authorId" required></select></div>
+                <div><label for="publicationYear">Annee de publication</label><input id="publicationYear" type="number" min="1000" max="2100" required></div>
+            </div>
+            <div class="actions" style="margin-top: 12px;">
+                <button type="submit">Enregistrer</button>
+                <button id="cancelEdit" class="secondary hidden" type="button">Annuler</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="table-card" style="margin-top: 16px;">
+        <div class="toolbar">
+            <input id="search" placeholder="Rechercher par titre ou auteur">
+            <button id="searchButton" type="button">Rechercher</button>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>ID</th><th>Titre</th><th>Auteur</th><th>Annee</th><th>Statut</th><th>Actions</th></tr></thead>
+                <tbody id="booksBody"></tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <button id="previous" type="button">Precedent</button>
+            <span id="pageInfo">Page 1</span>
+            <button id="next" type="button">Suivant</button>
+        </div>
+    </div>
+</main>
+<script src="./js/api.js"></script>
+<script src="./js/layout.js"></script>
+<script src="./js/books.js"></script>
+</body>
+</html>

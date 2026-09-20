@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotheque - Adherents</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body data-page="members">
+<header>
+    <h1>Bibliotheque de quartier</h1>
+    <nav>
+        <a data-page="dashboard" href="./index.html">Tableau de bord</a>
+        <a data-page="books" href="./books.html">Livres</a>
+        <a data-page="authors" href="./authors.html">Auteurs</a>
+        <a data-page="members" href="./members.html">Adherents</a>
+        <a data-page="loans" href="./loans.html">Emprunts</a>
+    </nav>
+</header>
+<main>
+    <h2>Gestion des adherents</h2>
+    <div id="message" class="message hidden"></div>
+    <div class="form-card">
+        <form id="memberForm">
+            <input id="memberId" type="hidden">
+            <div class="form-grid">
+                <div><label for="name">Nom</label><input id="name" required maxlength="120"></div>
+                <div><label for="contact">Contact</label><input id="contact" required maxlength="120"></div>
+            </div>
+            <div class="actions" style="margin-top: 12px;">
+                <button type="submit">Enregistrer</button>
+                <button id="cancelEdit" class="secondary hidden" type="button">Annuler</button>
+            </div>
+        </form>
+    </div>
+    <div class="table-card" style="margin-top: 16px;">
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>ID</th><th>Nom</th><th>Contact</th><th>Actions</th></tr></thead>
+                <tbody id="membersBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="table-card" style="margin-top: 16px;">
+        <h3>Historique d'un adherent</h3>
+        <div class="toolbar">
+            <select id="historyMember"></select>
+            <button id="loadHistory" type="button">Afficher l'historique</button>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Livre</th><th>Date emprunt</th><th>Date retour prevue</th><th>Date retour</th><th>Statut</th></tr></thead>
+                <tbody id="historyBody"></tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<script src="./js/api.js"></script>
+<script src="./js/layout.js"></script>
+<script src="./js/members.js"></script>
+</body>
+</html>

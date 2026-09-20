@@ -1,0 +1,51 @@
+{
+  "info": {
+    "name": "Bibliotheque de quartier API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {"key": "baseUrl", "value": "http://localhost:3000/api"}
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {"method": "GET", "url": "{{baseUrl}}/health"}
+    },
+    {
+      "name": "Authors",
+      "item": [
+        {"name": "List authors", "request": {"method": "GET", "url": "{{baseUrl}}/authors"}},
+        {"name": "Create author", "request": {"method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body":{"mode":"raw","raw":"{\n  \"name\": \"J. K. Rowling\",\n  \"nationality\": \"Britannique\"\n}"}, "url":"{{baseUrl}}/authors"}},
+        {"name": "Update author 1", "request": {"method": "PUT", "header": [{"key":"Content-Type","value":"application/json"}], "body":{"mode":"raw","raw":"{\n  \"name\": \"Victor Hugo\",\n  \"nationality\": \"Francaise\"\n}"}, "url":"{{baseUrl}}/authors/1"}},
+        {"name": "Delete author 1", "request": {"method": "DELETE", "url":"{{baseUrl}}/authors/1"}}
+      ]
+    },
+    {
+      "name": "Members",
+      "item": [
+        {"name": "List members", "request": {"method": "GET", "url": "{{baseUrl}}/members"}},
+        {"name": "Create member", "request": {"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"name\": \"Jean Dupont\",\n  \"contact\": \"0600000001\"\n}"},"url":"{{baseUrl}}/members"}},
+        {"name": "Member loan history", "request": {"method":"GET","url":"{{baseUrl}}/members/1/loans"}}
+      ]
+    },
+    {
+      "name": "Books",
+      "item": [
+        {"name": "List books", "request": {"method":"GET","url":"{{baseUrl}}/books?page=1&limit=10"}},
+        {"name": "Search books", "request": {"method":"GET","url":"{{baseUrl}}/books?search=1984&page=1&limit=10"}},
+        {"name": "Create book", "request": {"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"title\": \"Le Petit Prince\",\n  \"author_id\": 1,\n  \"publication_year\": 1943\n}"},"url":"{{baseUrl}}/books"}}
+      ]
+    },
+    {
+      "name": "Loans",
+      "item": [
+        {"name": "All loans", "request": {"method":"GET","url":"{{baseUrl}}/loans?status=all"}},
+        {"name": "Active loans", "request": {"method":"GET","url":"{{baseUrl}}/loans?status=active"}},
+        {"name": "Overdue loans", "request": {"method":"GET","url":"{{baseUrl}}/loans?status=overdue"}},
+        {"name": "Create loan", "request": {"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"member_id\": 1,\n  \"book_id\": 1,\n  \"due_date\": \"2026-10-03\"\n}"},"url":"{{baseUrl}}/loans"}},
+        {"name": "Return loan 1", "request": {"method":"PUT","url":"{{baseUrl}}/loans/1/return"}},
+        {"name": "Statistics", "request": {"method":"GET","url":"{{baseUrl}}/loans/stats"}}
+      ]
+    }
+  ]
+}

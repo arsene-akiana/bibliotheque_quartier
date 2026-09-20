@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotheque - Emprunts</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body data-page="loans">
+<header>
+    <h1>Bibliotheque de quartier</h1>
+    <nav>
+        <a data-page="dashboard" href="./index.html">Tableau de bord</a>
+        <a data-page="books" href="./books.html">Livres</a>
+        <a data-page="authors" href="./authors.html">Auteurs</a>
+        <a data-page="members" href="./members.html">Adherents</a>
+        <a data-page="loans" href="./loans.html">Emprunts</a>
+    </nav>
+</header>
+<main>
+    <h2>Gestion des emprunts</h2>
+    <div id="message" class="message hidden"></div>
+
+    <div class="form-card">
+        <h3>Nouvel emprunt</h3>
+        <form id="loanForm">
+            <div class="form-grid">
+                <div><label for="memberId">Adherent</label><select id="memberId" required></select></div>
+                <div><label for="bookId">Livre disponible</label><select id="bookId" required></select></div>
+                <div><label for="dueDate">Date de retour prevue</label><input id="dueDate" type="date" required></div>
+            </div>
+            <div style="margin-top: 12px;"><button type="submit">Enregistrer l'emprunt</button></div>
+        </form>
+    </div>
+
+    <div class="table-card" style="margin-top: 16px;">
+        <div class="toolbar">
+            <button id="showActive" type="button">En cours</button>
+            <button id="showOverdue" class="danger" type="button">En retard</button>
+            <button id="showAll" class="secondary" type="button">Tous</button>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Adherent</th><th>Livre</th><th>Date emprunt</th><th>Retour prevu</th><th>Statut</th><th>Action</th></tr></thead>
+                <tbody id="loansBody"></tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<script src="./js/api.js"></script>
+<script src="./js/layout.js"></script>
+<script src="./js/loans.js"></script>
+</body>
+</html>
